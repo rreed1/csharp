@@ -1,5 +1,5 @@
        /*
-          This snippet was originally written for a C# class.  It calculates the amount needed to reach a specific savings goal. 
+          This snippet was originally written for a C# class.  It calculates the amount of money needed to reach a specific savings goal. 
        */
        
        private decimal PresentValue()

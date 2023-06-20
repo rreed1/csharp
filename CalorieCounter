@@ -1,0 +1,33 @@
+/*
+    This snippet is for a calorie counter. It was originally done as part of a larger project for C#.
+*/
+       
+       private double CalcFatCals(double fatGrams)
+        {
+            return fatGrams * 9;
+        }
+
+        private double CalcCarbCals(double carbGrams)
+        {
+            return carbGrams * 4;
+        }
+        private void calcButton_Click(object sender, EventArgs e)
+        {
+            // Variables
+            double fatCals, carbCals;
+
+            // Calculates fat and carb calories
+            try
+            {
+                fatCals = CalcFatCals(double.Parse(fatTB.Text));
+                carbCals = CalcCarbCals(double.Parse(carbTB.Text));
+
+                outputLabel.Text = fatCals.ToString() + " calories from fat and "
+                    + carbCals.ToString() + " calories from carbs (" + (fatCals + carbCals)
+                    + " total calories).";
+            }
+            catch
+            {
+                MessageBox.Show("Input must be valid numbers.");
+            }
+        }

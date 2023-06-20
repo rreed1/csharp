@@ -1,0 +1,31 @@
+       /*
+          This snippet was originally written for a C# class.  It calculates the amount needed to reach a specific savings goal. 
+       */
+       
+       private decimal PresentValue()
+        {
+            // Variables
+            decimal fVal, intRate, annualVal;
+            int years;
+
+            decimal.TryParse(futureValTB.Text, out fVal);
+            decimal.TryParse(intRateTB.Text, out intRate);
+            int.TryParse(yearsTB.Text, out years);
+            annualVal = 1;
+            intRate = intRate / 100;
+
+            // Loop to calculate total interest
+            while (years != 0)
+            {
+                annualVal = (1 + intRate) * annualVal;
+                years--;
+            }
+            return fVal / annualVal;
+        }
+
+
+
+        private void calcButton_Click(object sender, EventArgs e)
+        {
+            ouputLabel.Text = PresentValue().ToString("c");
+        }
